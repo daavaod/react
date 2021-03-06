@@ -3,6 +3,7 @@ import MeetupItem from './MeetupItem'
 import styles from './MeetupList.module.css'
 
 const MeetupList = (props) => {
+
     return (
         <ul className={styles.list}>
             {

@@ -4,7 +4,7 @@ import Card from '../ui/Card'
 
 import styles from './NewMeetupForm.module.css'
 
-const NewMeetupForm = () => {
+const NewMeetupForm = (props) => {
     const titleInputRef = useRef();
     const imageInputRef = useRef();
     const addressInputRef = useRef();
@@ -25,6 +25,7 @@ const NewMeetupForm = () => {
             description: enteredDescription,
         }
 
+        props.onAddMeetup(meetupData);
     }
 
     return (
@@ -39,11 +40,11 @@ const NewMeetupForm = () => {
                     <input type="url" required id="image" ref={imageInputRef} />
                 </div>
                 <div className={styles.control}>
-                    <label htmlFor="address">address</label>
+                    <label htmlFor="address">Address</label>
                     <input type="text" required id="address" ref={addressInputRef} />
                 </div>
                 <div className={styles.control}>
-                    <label htmlFor="description">address</label>
+                    <label htmlFor="description">Description</label>
                     <textarea required id="description" rows="5" ref={descriptionInputRef} ></textarea>
                 </div>
                 <div className={styles.actions}>
